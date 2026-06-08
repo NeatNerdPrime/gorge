@@ -19,10 +19,6 @@ USER 10001
 # Define volume
 VOLUME [ "/home/gorge" ]
 
-# Set health check
-HEALTHCHECK --interval=30s --timeout=3s \
-  CMD curl -f http://localhost:8080/readyz || exit 1
-
 ENV GORGE_BIND=0.0.0.0
 ENTRYPOINT ["/gorge"]
 CMD [ "serve" ]
